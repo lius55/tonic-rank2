@@ -62,69 +62,7 @@
         <div class="main-inner">
             <div class="content comparisonAchive-cont">
                 <div class="comparisonAchive-inner">
-                    <table border="3" cellspacing="0" bordercolor="#e5e5e5">
-                        <tr>
-                            <th>成分名</th>
-                            <th>男性
-                                <br>ホルモン
-                                <br>抑制</th>
-                            <th>血行促進</th>
-                            <th>毛母細胞活性化</th>
-                            <th>バルジ
-                                <br>活性化</th>
-                            <th>成長促進</th>
-                            <th>保湿</th>
-                            <th>抗酸化・
-                                <br>殺菌</th>
-                            <th>説明</th>
-                        </tr>
-                        <tr>
-                            <td>ｌ‐メントール</td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/◎.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/×.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td>ミントやハッカから抽出される成分。血行促進作用と清涼感をもたらし、殺菌力で頭皮トラブルを予防します。シャンプーや育毛剤に清涼感をもたらす目的で使用されます。</td>
-                        </tr>
-                        <tr>
-                            <td>ヒオウギエキス</td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/◎.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/×.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td>アヤメ科のヒオウギという植物から抽出されるエキス。イソフラボンを配合しているため女性ホルモン様作用があり、男性ホルモンの活動を抑制し抜け毛を防ぎます。</td>
-                        </tr>
-                        <tr>
-                            <td>オウゴンエキス</td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/◎.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/×.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td>オウゴン（黄芩）エキスは、シソ科のコガネバナ（黄金花）から取れる生薬成分。炎症を抑えるバイカリン・バイカレインと言う成分を含み、頭皮トラブルを改善します。男性ホルモンの働きを抑える作用があるので抜け毛に役立ちます。
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>グリセリンモノ２‐エチルヘキシルエーテル</td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/◎.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/×.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td><img src="media/effect/△.png" class="img-responsive"></td>
-                            <td>グリセリンモノ２‐エチルヘキシルエーテルはグリセリン誘導体で抗菌・殺菌がある他、消臭・脱臭作用があり、髪や肌を清潔に保つのに役立ちます。
-                            </td>
-                        </tr>
-                    </table>
+                    <table border="3" cellspacing="0" bordercolor="#e5e5e5" id="compList"></table>
                 </div>
             </div>
             <div id="pageTOP">
@@ -228,6 +166,40 @@
     <script type="text/javascript" src="script/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="script/jquery.mCustomScrollbar.concat.min.js"></script>
     <script src="script/main.js"></script>
+    <script src="script/jquery.tmpl.min.js"></script>
+    <script src="script/common.js"></script>
+    <script src="script/view/comp.js"></script>
 </body>
+
+<script type="text/html" id="compListTemplate">
+    <tr>
+        <th>成分名</th>
+        <th>男性
+            <br>ホルモン
+            <br>抑制</th>
+        <th>血行促進</th>
+        <th>毛母細胞活性化</th>
+        <th>バルジ
+            <br>活性化</th>
+        <th>成長促進</th>
+        <th>保湿</th>
+        <th>抗酸化・
+            <br>殺菌</th>
+        <th>説明</th>
+    </tr>
+    {{each compList}}
+    <tr>
+        <td>${name}</td>
+        <td><img src="media/effect/${hormone_supp}.png" class="img-responsive"></td>
+        <td><img src="media/effect/${circulation_promot}.png" class="img-responsive"></td>
+        <td><img src="media/effect/${cell_activation}.png" class="img-responsive"></td>
+        <td><img src="media/effect/${bulge_activation}.png" class="img-responsive"></td>
+        <td><img src="media/effect/${growth_promot}.png" class="img-responsive"></td>
+        <td><img src="media/effect/${moist}.png" class="img-responsive"></td>
+        <td><img src="media/effect/${anti_virus}.png" class="img-responsive"></td>
+        <td>${detail}</td>
+    </tr>
+    {{/each}}
+</script>
 
 </html>

@@ -89,6 +89,7 @@
                         <div class="man">
                             <img src="media/top/man3.png" class="img-responsive">
                         </div>
+                        <div id="goodsList">
                         <div class="lineup-inner d-flex">
                             <div class="lineup-procuct">
                                 <div class="lineup-procuct-name">
@@ -189,7 +190,7 @@
                                 </div>
                             </div>
                         </div>
-                       <div class="lineup-inner d-flex">
+                        <div class="lineup-inner d-flex">
                             <div class="lineup-procuct">
                                 <div class="lineup-procuct-name">
                                     リアップ
@@ -250,6 +251,7 @@
                                     <img src="media/common/arw_yellow.png" class="img-responsive">
                                 </div>
                             </div>
+                        </div>
                         </div>
                         <div class="andmore">
                             <a href="#">
@@ -392,31 +394,56 @@
                 <table>
                     <tr>
                         <th>育毛期待度</th>
-                        <td><img src="media/common/iconSTAR.png"></td>
+                        <td class="d-flex align-items-center">
+                            {{for(i=0; i<expect_degree; i++)}}
+                            <img src="media/common/iconSTAR.png" class="img-responsive">
+                            {{/for}}
+                        </td>
                     </tr>
                     <tr>
                         <th>注目人気</th>
                         <td class="d-flex align-items-center">
+                            {{for(i=0; i<popularity; i++)}}
                             <img src="media/common/iconSTAR.png" class="img-responsive">
-                            <img src="media/common/iconSTAR.png" class="img-responsive">
-                            <img src="media/common/iconSTAR.png" class="img-responsive">
-                            <img src="media/common/iconSTAR.png" class="img-responsive">
-                            <img src="media/common/iconSTAR.png" class="img-responsive"></td>
+                            {{/for}}
+                        </td>
                     </tr>
                     <tr>
-                        <th>コスト
-                            <br>パフォーマンス</th>
-                        <td><img src="media/common/iconSTAR.png"></td>
+                        <th>コスト<br/>パフォーマンス</th>
+                       <td class="d-flex align-items-center">
+                            {{for(i=0; i<cost_performance; i++)}}
+                            <img src="media/common/iconSTAR.png" class="img-responsive">
+                            {{/for}}
+                        </td>
                     </tr>
                 </table>
             </div>
             <div class="seemore d-flex justify-content-between align-items-center">
-                <a href="comparison-single.html">詳しく見る</a>
+                <a href="comparison-single.html?id=${id}">詳しく見る</a>
                 <img src="media/common/arw_yellow.png" class="img-responsive">
             </div>
         </div>
     </div>
     {{/each}}
 </script>
-
+<script type="text/html" id="goodsListTemplate">
+    {{for(i=0;i<goodsList.length;i++)}}
+    {{if i<9&&i%4==0 || i>9&&(i-8)%5==0}}
+        <div class="lineup-inner d-flex">
+    {{/if}}
+    <div class="lineup-procuct" id="goods${i}">
+        <div class="lineup-procuct-name">${goodsList[i].name}</div>
+        <div class="lineup-procuct-img">
+            <img src="${goodsList[i].image}" class="img-responsive">
+        </div>
+        <div class="seemore d-flex justify-content-between align-items-center">
+            <a href="comparison-single.html?id=${goodsList[i].id}">詳しく見る</a>
+            <img src="media/common/arw_yellow.png" class="img-responsive">
+        </div>
+    </div>
+    {{if i==3 || i== 7 || i>9&&(i-8)%4==0}}
+        </div>
+    {{/if}}
+    {{/for}}
+</script>
 </html>

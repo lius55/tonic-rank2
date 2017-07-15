@@ -1,11 +1,13 @@
+// const apiBaseUrl = 'http://kamilabo.info/tonic-rank2/api/';
 const apiBaseUrl = 'http://localhost:8888/tonic-rank2/api/';
 const apiList = {
     rankingGoodsList:       apiBaseUrl + 'specific-goods-list.php',
-    goodsList:      apiBaseUrl + 'man/goods-list.php', 
-    goodsInfo:      apiBaseUrl + 'man/goods-info.php',
+    goodsList:              apiBaseUrl + 'goods-list.php', 
+    goodsInfo:              apiBaseUrl + 'goods-info.php',
     goodsUpdate:    apiBaseUrl + 'man/goods-update.php',
     goodsDelete:    apiBaseUrl + 'man/goods-delete.php',
-    compList:       apiBaseUrl + 'man/comp-list.php'
+    compList:               apiBaseUrl + 'comp-list.php',
+    goodsCompList:          apiBaseUrl + 'goods-comp-list.php'
 };
 
 const ResponseCode = {
@@ -235,6 +237,17 @@ const isNull = function(obj) {
     }
 };
 
+const showSpecificGoods = function(response, templateId, displayId) {
+    var goodsList = [];
+    response.goodsList.forEach(function(goods) {
+        goods.catch_phrase = goods.catch;
+        goodsList.push(goods);
+    });
+    response.goodsList = goodsList;
+    $(displayId).empty();
+    $.tmpl($(templateId), response).appendTo(displayId);
+}
+
 //-------------------
 //   初期処理
 //-------------------
@@ -252,4 +265,14 @@ $(function() {
             location.href = "login.html";
         }
     });
+
+    (function ($) {
+        $.extend(jQuery.tmpl.tag, {
+            "for": {
+                _default: {$2: "var i=1;i<=1;i++"},
+                open: 'for ($2){',
+                close: '};'
+            }
+        });
+    })(jQuery);
 });

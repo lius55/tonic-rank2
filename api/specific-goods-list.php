@@ -26,7 +26,8 @@ foreach(explode(",", $row['value']) as $goodsId) {
 	$stmt->execute();
 	$goods = new stdClass();
 	$goods = $stmt->fetch(PDO::FETCH_OBJ);
-
+	$goods->image = IMG_BASE_PATH . $goods->image;
+	
 	// 口コミリスト取得
 	$stmt = $dbh->prepare("select * from TRN_ASSESS where goods_id = :id");
 	$stmt->bindParam(':id', $goodsId, PDO::PARAM_INT);

@@ -84,7 +84,7 @@
                 <div class="content costperform">
                     <h3><img src="../media/top_sp/ttl1.png" class="img-responsive"></h3>
                     <div class="costperform-inner">
-                        <div class="ranking">
+                        <div class="ranking" id="goodsRanking">
                             <!--最強の育毛剤リスト-->
                             <!--商品ループ-->
                             <div class="ranking-product">
@@ -462,7 +462,81 @@
         <script type="text/javascript" src="../script/jquery-2.1.0.min.js"></script>
         <script type="text/javascript" src="../script/jquery.mCustomScrollbar.concat.min.js"></script>
         <script src="../script/main.js"></script>
+        <script src="../script/jquery.tmpl.min.js"></script>
+        <script src="../script/common.js"></script>
+        <script src="../script/view/index.js"></script>
     </footer>
 </body>
+
+<script type="text/html" id="goodsRankingTemplate">
+    {{each goodsList}}
+    <div class="ranking-product">
+        <!--商品名-->
+        <div class="ranking-product-name">
+            <h5>${name}</h5>
+            <p>${publisher}</p>
+        </div>
+        <!--商品説明-->
+        <div class="ranking-product-desc">
+            ${catch_phrase}
+        </div>
+        <!--商品画像-->
+        <div class="ranking-product-img-info d-flex justify-content-around">
+            <div class="ranking-product-img d-flex align-items-end">
+                <img src="${image}" class="img-responsive">
+            </div>
+            <div class="ranking-product-info">
+                <!--１日あたりの価格-->
+                <div class="price-per-day">
+                    <p>１日あたり<strong>${one_day_price}</strong>円</p>
+                    <p>${capacity}m; ${price}円(税込)</p>
+                </div>
+                <!--星-->
+                <div class="status">
+                    <table>
+                        <tr>
+                            <th>育毛期待度</th>
+                            <td>
+                                {{for(i=0; i<expect_degree; i++)}}
+                                <img src="../media/common/iconSTAR.png">
+                                {{/for}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>注目人気</th>
+                            <td class="d-flex align-items-center">
+                                {{for(i=0; i<popularity; i++)}}
+                                <img src="../media/common/iconSTAR.png">
+                                {{/for}}
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>コスト
+                                <br>パフォーマンス</th>
+                            <td>
+                                {{for(i=0; i<cost_performance; i++)}}
+                                <img src="../media/common/iconSTAR.png">
+                                {{/for}}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="Btn-cont d-flex justify-content-between">
+            <div class="official-link-s">
+                <a href="${url}">
+                    <img src="../media/common/officialBtn.png" class="img-responsive">
+                    <span>この商品の<br>公式ページへ</span></a>
+            </div>
+            <div class="seemore-s">
+                <a href="comparison-single.html?id=${id}">
+                    <img src="../media/common/moreinfoBtn.png" class="img-responsive">
+                    <span>詳しく見る</span></a>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
 
 </html>
