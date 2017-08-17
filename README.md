@@ -10,6 +10,8 @@ API的返回值跟页面的绑定使用了jquery template.
 - jquery template
 - php
 
+## Image
 <p align="center">
 <img src="https://github.com/lius55/tonic-rank2/blob/master/r1.png"></img>
+<img src="https://github.com/lius55/tonic-rank2/blob/master/r2.png"></img>
 </p>
