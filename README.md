@@ -5,4 +5,5 @@ API的返回值跟页面的绑定使用了jquery template.
 因为总结是从这个项目开始写的，那就简述一下jquery template的写法吧。  
 
 ## Keyword
-html,jquery,jquery template,php
+- html
+- jquery,jquery template,php
