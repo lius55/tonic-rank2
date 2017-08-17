@@ -6,4 +6,6 @@ API的返回值跟页面的绑定使用了jquery template.
 
 ## Keyword
 - html
-- jquery,jquery template,php
+- jquery
+- jquery template
+- php
