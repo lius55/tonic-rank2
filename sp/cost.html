@@ -101,118 +101,6 @@
                 <div class="cost-data-list-cont">
                     <div class="cost-data-list-cont-inner" id="goodsCosPerList">
                         <!--早見表テーブル-->
-                        <table border="1" cellspacing="0" bordercolor="#e5e5e5">
-                            <tr>
-                                <td rowspan="5">
-                                    <img src="../media/common/riup.png" class="img-responsive">
-                                    <p>リアップ
-                                        <br>Ｘ５プラス</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">育毛
-                                    <br>期待度</td>
-                                <td>
-                                    <div class="star d-flex justify-content-center flex-wrap">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">注目人気</td>
-                                <td>
-                                    <div class="star d-flex justify-content-center flex-wrap">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">コスパ</td>
-                                <td>
-                                    <div class="star d-flex justify-content-center flex-wrap">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">１日
-                                    <br>あたり</td>
-                                <td class="price-per-day">
-                                    <!--１日あたりの価格-->
-                                    <p>１日あたり<strong>299</strong>円</p>
-                                    <p>120m; 8,879円(税込)
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
-                        <table border="1" cellspacing="0" bordercolor="#e5e5e5">
-                            <tr>
-                                <td rowspan="5">
-                                    <img src="../media/common/poripure.png" class="img-responsive">
-                                    <p>リアップ
-                                        <br>Ｘ５プラス</p>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">育毛
-                                    <br>期待度</td>
-                                <td>
-                                    <div class="star d-flex justify-content-center flex-wrap">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">注目人気</td>
-                                <td>
-                                    <div class="star d-flex justify-content-center flex-wrap">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">コスパ</td>
-                                <td>
-                                    <div class="star d-flex justify-content-center flex-wrap">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                        <img src="../media/common/iconSTAR.png">
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="blue">１日
-                                    <br>あたり</td>
-                                <td class="price-per-day">
-                                    <!--１日あたりの価格-->
-                                    <p>１日あたり<strong>299</strong>円</p>
-                                    <p>120m; 8,879円(税込)
-                                    </p>
-                                </td>
-                            </tr>
-                        </table>
                         <!--早見表テーブルEND-->
                     </div>
                 </div>
@@ -286,13 +174,13 @@
         <!--商品画像-->
         <div class="ranking-product-img-info d-flex justify-content-around">
             <div class="ranking-product-img d-flex align-items-start">
-                <img src="../media/common/riup.png" class="img-responsive">
+                <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
             </div>
             <div class="ranking-product-info">
                 <!--１日あたりの価格-->
                 <div class="price-per-day">
                     <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                    <p>${capacity}; ${price}円(税込)</p>
+                    <p>${capacity}ml ${price}円(税込)</p>
                 </div>
                 <!--星-->
                 <div class="status">
@@ -346,7 +234,7 @@
     <table border="1" cellspacing="0" bordercolor="#e5e5e5">
         <tr>
             <td rowspan="5">
-                <img src="${image}" class="img-responsive">
+                <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
                 <p>${name}</p>
             </td>
         </tr>
@@ -387,7 +275,7 @@
             <td class="price-per-day">
                 <!--１日あたりの価格-->
                 <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                <p>${capacity}m; ${price}円(税込)
+                <p>${capacity}ml ${price}円(税込)
                 </p>
             </td>
         </tr>

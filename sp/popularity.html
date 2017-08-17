@@ -111,63 +111,16 @@
                     <div class="man"><img src="../media/popularity_sp/man2.png"></div>
                 </div>
                 <div class="popularity-data-list-cont">
-                    <div class="popularity-data-list-cont-inner">
+                    <div class="popularity-data-list-cont-inner" id="goodsAssessList">
+                    </div>
                         <!--口コミループ-->
-                        <div class="popularity-data-list">
-                            <!--商品名-->
-                            <h5>リアップ x5 プラス</h5>
-                            <!--口コミ内容-->
-                            <ul>
-                                <li>スースするのはいいけど刺激強すぎて怖い。そんなに頭皮を虐めないでくれ！って普通に思ってしまう。 </li>
-                                <li>抜け毛も減ったし調子イイ感じがする。</li>
-                                <li>いつも使っています。風呂上りに使ていますが、使用後はすっきりです。 べとべともなく翌朝も非常によい感じです。</li>
-                                <li>薄毛ではないが使ってます。爽快感がたまらないし髪にコシが出た感です。 毛髪が伸びるのが早くなります。</li>
-                            </ul>
-                            <!--この商品の詳細へ-->
-                            <div class="product-link d-flex align-items-center justify-content-end">
-                                <img src="../media/common/arw_red.png" class="img-responsive">
-                                <a href="#" target="blank">この商品の詳細へ</a>
-                            </div>
-                        </div>
-                        <div class="popularity-data-list">
-                            <!--商品名-->
-                            <h5>リアップ x5 プラス</h5>
-                            <!--口コミ内容-->
-                            <ul>
-                                <li>スースするのはいいけど刺激強すぎて怖い。そんなに頭皮を虐めないでくれ！って普通に思ってしまう。 </li>
-                                <li>抜け毛も減ったし調子イイ感じがする。</li>
-                                <li>いつも使っています。風呂上りに使ていますが、使用後はすっきりです。 べとべともなく翌朝も非常によい感じです。</li>
-                                <li>薄毛ではないが使ってます。爽快感がたまらないし髪にコシが出た感です。 毛髪が伸びるのが早くなります。</li>
-                            </ul>
-                            <!--この商品の詳細へ-->
-                            <div class="product-link d-flex align-items-center justify-content-end">
-                                <img src="../media/common/arw_red.png" class="img-responsive">
-                                <a href="#" target="blank">この商品の詳細へ</a>
-                            </div>
-                        </div>
-                        <div class="popularity-data-list">
-                            <!--商品名-->
-                            <h5>リアップ x5 プラス</h5>
-                            <!--口コミ内容-->
-                            <ul>
-                                <li>スースするのはいいけど刺激強すぎて怖い。そんなに頭皮を虐めないでくれ！って普通に思ってしまう。 </li>
-                                <li>抜け毛も減ったし調子イイ感じがする。</li>
-                                <li>いつも使っています。風呂上りに使ていますが、使用後はすっきりです。 べとべともなく翌朝も非常によい感じです。</li>
-                                <li>薄毛ではないが使ってます。爽快感がたまらないし髪にコシが出た感です。 毛髪が伸びるのが早くなります。</li>
-                            </ul>
-                            <!--この商品の詳細へ-->
-                            <div class="product-link d-flex align-items-center justify-content-end">
-                                <img src="../media/common/arw_red.png" class="img-responsive">
-                                <a href="#" target="blank">この商品の詳細へ</a>
-                            </div>
-                        </div>
                         <!--口コミループEND-->
                         <div class="andmore">
                             <a href="#">さらに口コミを見る
                             <img src="../media/common/arw_red_below.png" class="img-responsive">
                             </a>
                         </div>
-                    </div>
+<!--                     </div> -->
                 </div>
             </div>
              <div class="content-navi-below d-flex justify-content-between align-items-center">
@@ -234,7 +187,7 @@
         <!--商品画像-->
         <div class="ranking-product-img-info d-flex justify-content-around">
             <div class="ranking-product-img d-flex align-items-start">
-                <img src="${image}" class="img-responsive">
+                <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
             </div>
             <div class="ranking-product-info">
                 <!--商品説明-->
@@ -244,7 +197,7 @@
                 <!--１日あたりの価格-->
                 <div class="price-per-day">
                     <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                    <p>${capacity}m; ${price}円(税込)</p>
+                    <p>${capacity}ml ${price}円(税込)</p>
                 </div>
             </div>
         </div>
@@ -277,7 +230,7 @@
         <!--商品画像-->
         <div class="ranking-product-img-info d-flex justify-content-around">
             <div class="ranking-product-img d-flex align-items-start">
-                <img src="${image}" class="img-responsive">
+                <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
             </div>
             <div class="ranking-product-info">
                 <!--商品説明-->
@@ -305,6 +258,23 @@
                     <img src="../media/common/moreinfoBtn.png" class="img-responsive">
                     <span>詳しく見る</span></a>
             </div>
+        </div>
+    </div>
+    {{/each}}
+</script>
+<script type="text/html" id="goodsAssessListTemplate">
+    {{each goodsList}}
+    <div class="popularity-data-list" id="goods${id}">
+        <!--商品名-->
+        <h5>${name}</h5>
+        <!--口コミ内容-->
+        <ul>
+            {{each assessList}}<li>${assess}</li>{{/each}}
+        </ul>
+        <!--この商品の詳細へ-->
+        <div class="product-link d-flex align-items-center justify-content-end">
+            <img src="../media/common/arw_red.png" class="img-responsive">
+            <a href="${url}" target="blank">この商品の詳細へ</a>
         </div>
     </div>
     {{/each}}

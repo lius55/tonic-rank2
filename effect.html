@@ -216,18 +216,18 @@
         </div>
         <!--商品画像-->
         <div class="ranking-product-img d-flex align-items-end">
-            <img src="media/common/riup.png" class="img-responsive">
+            <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
         </div>
         <!--商品説明-->
         <div class="ranking-product-desc">
             <p>${catch_phrase}</p>
-            <small>種別：第一類医薬品</small>
+<!--             <small>種別：第一類医薬品</small> -->
         </div>
         <div class="ranking-product-info">
             <!--１日あたりの価格-->
             <div class="price-per-day">
                 <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                <p>${capacity}m; ${price}円(税込)</p>
+                <p>${capacity}ml ${price}円(税込)</p>
             </div>
             <!--チャート-->
             <div class="chart">
@@ -259,7 +259,7 @@
             <div class="component-data-list-img">
                 <!--商品画像-->
                 <div class="img-wrap">
-                    <img src="${image}">
+                    <a href="comparison-single.html?id=${id}"><img src="${image}"></a>
                 </div>
                 <!--詳しく見る-->
                 <div class="seemore d-flex justify-content-between align-items-center">
@@ -329,7 +329,7 @@
     {{each goodsList}}
     <tr>
         <td>
-            <img src="${image}" class="img-responsive">
+            <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
             <p><strong>${name}</strong></p>
         </td>
         <td>{{html hormone_supp}}</td>

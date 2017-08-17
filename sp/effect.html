@@ -171,20 +171,20 @@
         <!--商品画像-->
         <div class="ranking-product-img-info d-flex justify-content-around">
             <div class="ranking-product-img d-flex align-items-start">
-                <img src="${image}" class="img-responsive">
+                <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
             </div>
             <div class="ranking-product-info">
                 <!--種別-->
-                <p><small>種別：第一類医薬品</small></p>
+                <!-- <p><small>種別：第一類医薬品</small></p> -->
                 <!--１日あたりの価格-->
                 <div class="price-per-day">
                     <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                    <p>${capacity}m; ${price}円(税込)</p>
+                    <p>${capacity}ml ${price}円(税込)</p>
                 </div>
                 <!--チャート-->
                 <div class="chart">
-                    <img src="../media/effect/chart.png" class="img-responsive">
-                    <!-- <canvas id="rank_radar${id}" height="195" width="200"></canvas> -->
+                    <!-- <img src="../media/effect/chart.png" class="img-responsive"> -->
+                    <canvas id="rank_radar${id}" height="195" width="200"></canvas>
                 </div>
             </div>
         </div>
@@ -213,7 +213,7 @@
         <div class="component-data-list-inner d-flex justify-content-between">
             <div class="component-data-list-img d-flex align-items-start">
                 <!--商品画像-->
-                <img src="${image}" class="img-responsive">
+                <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
                 <!--詳しく見る-->
             </div>
             <div class="component-data-list-chart">

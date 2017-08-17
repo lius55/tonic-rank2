@@ -163,7 +163,7 @@
                     <div class="component-data-list-inner d-flex flex-column">
                         <!--商品画像-->
                         <div class="product-img">
-                            <img src="${image}" class="img-responsive">
+                            <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
                         </div>
                         <!--チャート-->
                         <div class="component-data-list-chart d-flex justify-content-center align-items-end">
@@ -183,7 +183,7 @@
                                     <!--１日あたりの価格-->
                                     <div class="price-per-day">
                                         <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                                        <p><small>${capacity}m; ${price}円(税込)</small></p>
+                                        <p><small>${capacity}ml ${price}円(税込)</small></p>
                                     </div>
                                 </div>
                                 <div class="box">
@@ -265,14 +265,18 @@
                 {{for(col=0; col<5; col++)}}
                     {{if col == 0}}<tr>{{/if}}
                     {{if i*5+col < compList.length}}
-                        <th>${compList[i*5+col].name}</th>
+                        <th>${compList[i*5+col].effect}</th>
                     {{/if}}
                     {{if col == 4}}</tr>{{/if}}
                 {{/for}}
                 {{for(col=0; col<5; col++)}}
                     {{if col == 0}}<tr>{{/if}}
                     {{if i*5+col < compList.length}}
-                    <td>${compList[i*5+col].detail}</td>
+                    <td>
+                        {{for(n=0; n<compList[i*5+col].compName.length; n++)}}
+                        ${compList[i*5+col].compName[n]}<br/>
+                        {{/for}}
+                    </td>
                     {{/if}}
                     {{if col == 4}}</tr>{{/if}}
                 {{/for}}

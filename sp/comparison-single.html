@@ -121,7 +121,7 @@
                 <div class="component-data-list-inner img-chart d-flex justify-content-between">
                     <div class="component-data-list-img d-flex justify-content-center align-items-center">
                         <!--商品画像-->
-                        <img src="${image}" class="img-responsive">
+                        <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
                     </div>
                     <div class="component-data-list-chart">
                         <!--チャート-->
@@ -144,8 +144,8 @@
                             <div class="box">
                                 <!--１日あたりの価格-->
                                 <div class="price-per-day">
-                                    <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                                    <p><small>${capacity}m; ${price}円(税込)</small></p>
+                                    <p>１日あたり<br/><strong>${one_day_price}</strong>円</p>
+                                    <p><small>${capacity}ml ${price}円(税込)</small></p>
                                 </div>
                             </div>
                             <div class="box">
@@ -218,8 +218,12 @@
             <table border="3" cellspacing="0" bordercolor="#e5e5e5">
                 {{each compList}}
                 <tr>
-                    <th>${name}</th>
-                    <td>${detail}</td>
+                    <th>${effect}</th>
+                    <td>
+                        {{each compName}}
+                            ${compName[$index]}<br/>
+                        {{/each}}
+                    </td>
                 </tr>
                 {{/each}}
             </table>

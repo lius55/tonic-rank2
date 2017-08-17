@@ -377,7 +377,7 @@
         </div>
         <!--商品画像-->
         <div class="ranking-product-img d-flex align-items-end">
-            <img src="media/common/riup.png" class="img-responsive">
+            <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
         </div>
         <!--商品説明-->
         <div class="ranking-product-desc">
@@ -434,7 +434,7 @@
     <div class="lineup-procuct" id="goods${i}">
         <div class="lineup-procuct-name">${goodsList[i].name}</div>
         <div class="lineup-procuct-img">
-            <img src="${goodsList[i].image}" class="img-responsive">
+            <a href="comparison-single.html?id=${goodsList[i].id}"><img src="${goodsList[i].image}" class="img-responsive"></a>
         </div>
         <div class="seemore d-flex justify-content-between align-items-center">
             <a href="comparison-single.html?id=${goodsList[i].id}">詳しく見る</a>

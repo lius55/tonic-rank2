@@ -213,7 +213,7 @@
         </div>
         <!--商品画像-->
         <div class="ranking-product-img d-flex align-items-end">
-            <img src="${image}" class="img-responsive">
+           <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
         </div>
         <!--商品説明-->
         <div class="ranking-product-desc">
@@ -223,7 +223,7 @@
             <!--１日あたりの価格-->
             <div class="price-per-day">
                 <p>１日あたり<strong>${one_day_price}</strong>円</p>
-                <p>${capacity}m; ${price}円(税込)</p>
+                <p>${capacity}ml ${price}円(税込)</p>
             </div>
             <!--星-->
             <div class="status">
@@ -267,7 +267,7 @@
     {{each goodsList}}
     <tr>
         <td> 
-            <img src="${image}" class="img-responsive">
+            <a href="comparison-single.html?id=${id}"><img src="${image}" class="img-responsive"></a>
             <h5>${name}</h5>
             <p>${publisher}</p>
         </td>
@@ -295,7 +295,7 @@
         <td class="price-per-day">
             <!--１日あたりの価格-->
             <p>１日あたり<strong>${one_day_price}</strong>円</p>
-            <p>${capacity}m;<br/>${price}円(税込)</p>
+            <p>${capacity}ml<br/>${price}円(税込)</p>
         </td>
     </tr>
     {{/each}}
