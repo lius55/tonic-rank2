@@ -4,6 +4,9 @@ $(function() {
 	var showAssessList = function(response) {
 		$.tmpl($("#goodsAssessListTemplate"), response).appendTo("#goodsAssessList");
 
+		$("#footerGoodsList").empty();
+		$.tmpl($("#footerGoodsListTemplate"), response).appendTo("#footerGoodsList");
+
 		for(var i=0; i < response.goodsList.length; i++) {
 			if (i>5) {
 				$("#goods" + response.goodsList[i].id).hide();

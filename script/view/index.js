@@ -2,8 +2,14 @@ $(function() {
 
 	var showAllGoodsList = function(response) {
 		console.log(response);
-		$("#goodsList").empty();
-		$.tmpl($("#goodsListTemplate"), response).appendTo("#goodsList");
+
+		if ($("#goodsList").length > 0) {
+			$("#goodsList").empty();
+			$.tmpl($("#goodsListTemplate"), response).appendTo("#goodsList");
+		}
+
+		$("#footerGoodsList").empty();
+		$.tmpl($("#footerGoodsListTemplate"), response).appendTo("#footerGoodsList");
 
 		for(var i=0; i < response.goodsList.length; i++) {
 			if (i > 12) {
@@ -23,14 +29,13 @@ $(function() {
 		$("#goodsRanking").empty();
 		$.tmpl($("#goodsRankingTemplate"), response).appendTo("#goodsRanking");
 
-		if ($("#goodsList").length > 0) {
-			// 商品一覧表示
-			ajax({
-				url: 		apiList.goodsList,
-				data: 		{},
-				success: 	showAllGoodsList
-			});
-		}
+		// 商品一覧表示
+		ajax({
+			url: 		apiList.goodsList,
+			data: 		{},
+			success: 	showAllGoodsList
+		});
+
 	}
 
 	ajax({

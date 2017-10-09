@@ -1,5 +1,12 @@
 $(function() {
 
+	var showAllGoodsList = function(response) {
+		console.log(response);
+
+		$("#footerGoodsList").empty();
+		$.tmpl($("#footerGoodsListTemplate"), response).appendTo("#footerGoodsList");
+	}
+
 	var showGoodsIno = function(response) {
 		$.tmpl($("#mainTemplate"), response.goodsInfo).appendTo("#main");
 		// #fffde9,#ff8776
@@ -27,6 +34,13 @@ $(function() {
 
 	    var ctx = document.getElementById("radarChart").getContext("2d");
 	    var radarChart = new Chart(ctx).Radar(data);
+
+	    // 商品一覧表示
+		ajax({
+			url: 		apiList.goodsList,
+			data: 		{},
+			success: 	showAllGoodsList
+		});
 	};
 
 	//------------------

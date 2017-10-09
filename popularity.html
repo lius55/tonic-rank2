@@ -138,30 +138,7 @@
                                 <span>比較対象育毛剤一覧</span>
                             </a>
                         </p>
-                        <ul class="d-flex justify-content-between flex-wrap">
-                            <li><a href="comparison-single.html">チャップアップ</a></li>
-                            <li><a href="comparison-single.html">チャップアップ</a></li>
-                            <li><a href="comparison-single.html">イクオス</a></li>
-                            <li><a href="comparison-single.html">イクオス</a></li>
-                            <li><a href="comparison-single.html">ブブカ</a></li>
-                            <li><a href="comparison-single.html">ブブカ</a></li>
-                            <li><a href="comparison-single.html">チャップアップ</a></li>
-                            <li><a href="comparison-single.html">チャップアップ</a></li>
-                            <li><a href="comparison-single.html">薬用ポリピュアEX</a></li>
-                            <li><a href="comparison-single.html">薬用ポリピュアEX</a></li>
-                            <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
-                            <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
-                            <li><a href="comparison-single.html">プランテル</a></li>
-                            <li><a href="comparison-single.html">プランテル</a></li>
-                            <li><a href="comparison-single.html">ウーマフリード</a></li>
-                            <li><a href="comparison-single.html">ウーマフリード</a></li>
-                            <li><a href="comparison-single.html">M-1ミスト</a></li>
-                            <li><a href="comparison-single.html">M-1ミスト</a></li>
-                            <li><a href="comparison-single.html">薬用レパオ</a></li>
-                            <li><a href="comparison-single.html">薬用レパオ</a></li>
-                            <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
-                            <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
-                        </ul>
+                        <ul class="d-flex justify-content-between flex-wrap" id="footerGoodsList"></ul>
                     </div>
                 </div>
                 <div class="footer-inner">
@@ -302,6 +279,11 @@
             <a href="${url}" target="blank">この商品の詳細へ</a>
         </div>
     </div>
+    {{/each}}
+</script>
+<script type="text/html" id="footerGoodsListTemplate">
+    {{each goodsList}}
+    <li><a href="comparison-single.html?id=${id}">${name}</a></li>
     {{/each}}
 </script>
 </html>

@@ -432,28 +432,7 @@
                             <span>人気の育毛剤を分析評価しました</span>
                             <img src="../media/footer/arwB.png">
                         </p>
-                        <ul>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single.html" class="d-flex justify-content-between align-items-center"><span>チャップアップ</span><img src="../media/footer/arwS.png"></a></li>
-                            <li><a href="comparison-single_sp.html" class="d-flex justify-content-between align-items-center"><span>ルプルプ薬用育毛エッセンス</span><img src="../media/footer/arwS.png"></a></li>
-                            <li class="topBtn">
-                                <a href="index.html" class="d-flex justify-content-between align-items-center"><img src="../media/footer/logo_footer.png"><img src="../media/common/arw_back.png"></a>
-                            </li>
-                            <li><a href="#" class="d-flex justify-content-between align-items-center"><span>髪LABOに戻る</span><img src="../media/footer/arwS.png"></a></li>
-                        </ul>
+                        <ul id="footerGoodsList"></ul>
                     </div>
                 </div>
             </div>
@@ -538,5 +517,9 @@
     </div>
     {{/each}}
 </script>
-
+<script type="text/html" id="footerGoodsListTemplate">
+    {{each goodsList}}
+    <li><a href="comparison-single.html?id=${id}" class="d-flex justify-content-between align-items-center"><span>${name}</span><img src="../media/footer/arwS.png"></a></li>
+    {{/each}}
+</script>
 </html>

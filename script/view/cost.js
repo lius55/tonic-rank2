@@ -3,6 +3,9 @@ $(function() {
 	var showGoodsList = function(response) {
 		// TODO showGoodsList
 	    $.tmpl($("#cosPerGoodsTemplate"), response).appendTo("#goodsCosPerList");
+
+		$("#footerGoodsList").empty();
+		$.tmpl($("#footerGoodsListTemplate"), response).appendTo("#footerGoodsList");
 	};
 
 	var showCostGoodsList = function(response) {

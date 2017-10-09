@@ -300,8 +300,8 @@
                                 <span>比較対象育毛剤一覧</span>
                             </a>
                         </p>
-                        <ul class="d-flex justify-content-between flex-wrap">
-                            <li><a href="comparison-single.html">チャップアップ</a></li>
+                        <ul class="d-flex justify-content-between flex-wrap" id="footerGoodsList">
+<!--                             <li><a href="comparison-single.html">チャップアップ</a></li>
                             <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
                             <li><a href="comparison-single.html">チャップアップ</a></li>
                             <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
@@ -320,7 +320,7 @@
                             <li><a href="comparison-single.html">チャップアップ</a></li>
                             <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
                             <li><a href="comparison-single.html">チャップアップ</a></li>
-                            <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li>
+                            <li><a href="comparison-single.html">ルプルプ薬用育毛エッセンス</a></li> -->
                         </ul>
                     </div>
                 </div>
@@ -445,5 +445,10 @@
         </div>
     {{/if}}
     {{/for}}
+</script>
+<script type="text/html" id="footerGoodsListTemplate">
+    {{each goodsList}}
+    <li><a href="comparison-single.html?id=${id}">${name}</a></li>
+    {{/each}}
 </script>
 </html>

@@ -4,6 +4,9 @@ $(function() {
 
 	    $.tmpl($("#effectGoodsTemplate"), response).appendTo("#goodsEffectList");
 
+		$("#footerGoodsList").empty();
+		$.tmpl($("#footerGoodsListTemplate"), response).appendTo("#footerGoodsList");
+
 		ajax({
 			url:  apiList.goodsCompList,
 			data: {},
